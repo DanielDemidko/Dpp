@@ -5,12 +5,13 @@
 
 class Module
 {
-protected:
+private:
     const std::vector<std::string> File;
-    Context Stack;
-    Dq::Enumerator<std::vector, std::string> Iterator{ File };
 
 public:
+    Context Lvalues;
+    Dq::Enumerator<std::vector, std::string> Curr{ File };
+
     Module(const std::string&);
 
     virtual ~Module() = default;
